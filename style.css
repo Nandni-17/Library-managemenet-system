@@ -1,0 +1,225 @@
+/* ===== Colour Variables ===== */
+:root {
+  --bg: #f4f6fb;
+  --card: #ffffff;
+  --text: #1f2937;
+  --muted: #6b7280;
+  --primary: #4f46e5;
+  --primary-dark: #4338ca;
+  --border: #e5e7eb;
+  --green: #16a34a;
+  --green-bg: #dcfce7;
+  --red: #dc2626;
+  --red-bg: #fee2e2;
+}
+
+/* Dark mode (applies automatically if the device uses dark mode) */
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg: #0f172a;
+    --card: #1e293b;
+    --text: #f1f5f9;
+    --muted: #94a3b8;
+    --primary: #818cf8;
+    --primary-dark: #6366f1;
+    --border: #334155;
+    --green: #4ade80;
+    --green-bg: #14532d;
+    --red: #f87171;
+    --red-bg: #7f1d1d;
+  }
+}
+
+/* ===== General ===== */
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--text);
+  font-family: 'Segoe UI', system-ui, -apple-system, Arial, sans-serif;
+  line-height: 1.5;
+}
+
+/* ===== Header ===== */
+header {
+  background: var(--primary);
+  color: #fff;
+  text-align: center;
+  padding: 28px 16px;
+}
+
+header h1 {
+  margin: 0;
+  font-size: 1.8rem;
+}
+
+header p {
+  margin: 4px 0 0;
+  opacity: 0.9;
+}
+
+/* ===== Layout ===== */
+main {
+  max-width: 900px;
+  margin: 24px auto;
+  padding: 0 16px;
+  display: grid;
+  gap: 20px;
+}
+
+.card {
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 20px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+}
+
+.card h2 {
+  margin: 0 0 14px;
+  font-size: 1.2rem;
+  color: var(--primary);
+}
+
+.row {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+/* ===== Inputs ===== */
+input {
+  flex: 1 1 160px;
+  padding: 10px 12px;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  font-size: 1rem;
+  background: var(--bg);
+  color: var(--text);
+}
+
+input:focus {
+  outline: 2px solid var(--primary);
+  border-color: transparent;
+}
+
+/* ===== Buttons ===== */
+button {
+  padding: 10px 18px;
+  border: none;
+  border-radius: 8px;
+  background: var(--primary);
+  color: #fff;
+  font-size: 0.95rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+button:hover {
+  background: var(--primary-dark);
+}
+
+button.secondary {
+  background: transparent;
+  color: var(--primary);
+  border: 1px solid var(--primary);
+}
+
+button.secondary:hover {
+  background: var(--primary);
+  color: #fff;
+}
+
+button.danger {
+  background: transparent;
+  color: var(--red);
+  border: 1px solid var(--red);
+}
+
+button.danger:hover {
+  background: var(--red);
+  color: #fff;
+}
+
+/* ===== Messages ===== */
+#message {
+  margin-top: 12px;
+  padding: 10px 14px;
+  border-radius: 8px;
+  font-weight: 500;
+  display: none;
+}
+
+#message.ok {
+  display: block;
+  background: var(--green-bg);
+  color: var(--green);
+}
+
+#message.err {
+  display: block;
+  background: var(--red-bg);
+  color: var(--red);
+}
+
+/* ===== Table ===== */
+.table-wrap {
+  overflow-x: auto;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+th,
+td {
+  text-align: left;
+  padding: 12px;
+  border-bottom: 1px solid var(--border);
+}
+
+th {
+  color: var(--muted);
+  font-size: 0.85rem;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
+
+td button {
+  padding: 6px 12px;
+  font-size: 0.85rem;
+}
+
+td button + button {
+  margin-left: 6px;
+}
+
+.empty {
+  text-align: center;
+  color: var(--muted);
+  padding: 20px;
+}
+
+/* ===== Status Badges ===== */
+.badge {
+  display: inline-block;
+  padding: 3px 10px;
+  border-radius: 999px;
+  font-size: 0.8rem;
+  font-weight: 600;
+}
+
+.badge.available {
+  background: var(--green-bg);
+  color: var(--green);
+}
+
+.badge.issued {
+  background: var(--red-bg);
+  color: var(--red);
+}

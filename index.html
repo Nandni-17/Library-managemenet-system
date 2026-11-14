@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Library Management System</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- ===== Page Header ===== -->
+  <header>
+    <h1>📚 Library Management System</h1>
+    <p>Add, search, issue, return and delete books</p>
+  </header>
+
+  <main>
+
+    <!-- ===== Add Book Section ===== -->
+    <section class="card">
+      <h2>Add Book</h2>
+      <div class="row">
+        <input type="number" id="bookId" placeholder="Book ID">
+        <input type="text" id="bookName" placeholder="Book Name">
+        <input type="text" id="bookAuthor" placeholder="Author Name">
+        <button onclick="addBook()">Add Book</button>
+      </div>
+      <!-- Success / error messages appear here -->
+      <div id="message"></div>
+    </section>
+
+    <!-- ===== Search Book Section ===== -->
+    <section class="card">
+      <h2>Search Book</h2>
+      <div class="row">
+        <input type="number" id="searchId" placeholder="Enter Book ID">
+        <button onclick="searchBook()">Search</button>
+        <button class="secondary" onclick="clearSearch()">Show All</button>
+      </div>
+    </section>
+
+    <!-- ===== View Books Section ===== -->
+    <section class="card">
+      <h2>Books</h2>
+      <div class="table-wrap">
+        <table>
+          <thead>
+            <tr>
+              <th>ID</th>
+              <th>Name</th>
+              <th>Author</th>
+              <th>Status</th>
+              <th>Action</th>
+            </tr>
+          </thead>
+          <tbody id="bookList"></tbody>
+        </table>
+      </div>
+    </section>
+
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
